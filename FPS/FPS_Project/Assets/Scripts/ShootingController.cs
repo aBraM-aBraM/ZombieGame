@@ -39,7 +39,7 @@ public class ShootingController : MonoBehaviour {
 		{
 			anim.SetTrigger("attackTrigger");
 			currentWeapon.currentMag--;
-			nextTimeToShoot = Time.time + (1 / currentWeapon.fireRate);
+			nextTimeToShoot = Time.time + (60 / currentWeapon.fireRate);
 
 			print("currentAmmo: " + currentWeapon.currentMag);
 

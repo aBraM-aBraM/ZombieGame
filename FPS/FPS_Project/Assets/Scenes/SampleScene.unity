@@ -8568,7 +8568,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4419681791879324, guid: 8127f1850fa3fe14bb6c10c666e463c8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.517296
+      value: 7.423546
       objectReference: {fileID: 0}
     - target: {fileID: 4419681791879324, guid: 8127f1850fa3fe14bb6c10c666e463c8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10277,7 +10277,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &713799312 stripped
 Transform:
@@ -11424,7 +11424,7 @@ MonoBehaviour:
     reloadSpeed: 2
     damage: 7
     range: 100
-    fireRate: 3
+    fireRate: 120
   - itemID: 2
     weaponType: 3
     name: KNIFE
@@ -11438,7 +11438,7 @@ MonoBehaviour:
     reloadSpeed: 0
     damage: 23
     range: 100
-    fireRate: 2
+    fireRate: 60
   - itemID: 3
     weaponType: 1
     name: M4A1
@@ -11452,7 +11452,7 @@ MonoBehaviour:
     reloadSpeed: 3
     damage: 36
     range: 100
-    fireRate: 25
+    fireRate: 800
 --- !u!4 &794717733
 Transform:
   m_ObjectHideFlags: 0
@@ -11464,7 +11464,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &795843409
 Prefab:
