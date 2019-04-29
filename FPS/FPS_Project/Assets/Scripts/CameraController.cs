@@ -15,23 +15,32 @@ public class CameraController : MonoBehaviour {
 	void Start()
 	{
 		Cursor.lockState = CursorLockMode.Locked;
+
 	}
 
 	void Update()
 	{
 		PerformRotation();
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			Cursor.lockState = 1 - Cursor.lockState;
+		}
 	}
 
 	void PerformRotation()
 	{
+		// Input of mouse
 		float mouseX = Input.GetAxis("Mouse X");
 		float mouseY = Input.GetAxis("Mouse Y");
 
+		// Amount of rotation applied
 		float rotAmountX = mouseX * mouseSensitivity;
 		float rotAmountY = mouseY * mouseSensitivity;
 
+		// Borders for rotation
 		xAxisClamp -= rotAmountY;
 
+		// Rotating the camera for y axis and body for z/x
 		Vector3 rotPlayerArms = playerArms.rotation.eulerAngles;
 		Vector3 rotPlayer = player.transform.rotation.eulerAngles;
 
@@ -39,6 +48,8 @@ public class CameraController : MonoBehaviour {
 		rotPlayerArms.z = 0;
 		rotPlayer.y += rotAmountX;
 
+
+		// Clamping 
 		if(xAxisClamp > 90)
 		{
 			xAxisClamp = 90;
@@ -50,6 +61,8 @@ public class CameraController : MonoBehaviour {
 			rotPlayerArms.x = 270;
 		}
 
+
+		// Performing Rotation
 		playerArms.rotation = Quaternion.Euler(rotPlayerArms);
 		player.rotation = Quaternion.Euler(rotPlayer);
 	}

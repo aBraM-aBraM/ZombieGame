@@ -21,6 +21,7 @@ public class CharacterStats : MonoBehaviour {
 	public virtual void Die()
 	{
 		isDead = true;
+		
 	}
 
 	public void TakeDamage(float damage)

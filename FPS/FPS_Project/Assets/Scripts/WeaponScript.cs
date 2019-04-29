@@ -77,6 +77,7 @@ public class WeaponScript : MonoBehaviour {
 				if (!start)
 					anim.SetTrigger("weaponSwitchTrigger");
 
+				
 				yield return new WaitForSeconds(1f);
 
 

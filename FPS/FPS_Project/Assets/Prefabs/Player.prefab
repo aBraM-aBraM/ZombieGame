@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4518802950838100}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: fps_arms_armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,9 +34,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4928943552127458}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Secondary
-  m_TagString: Untagged
+  m_TagString: Secondary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4685795899288818}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: hand.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,8 @@ GameObject:
   - component: {fileID: 143821020511264248}
   - component: {fileID: 114106671682056154}
   - component: {fileID: 114940299387291704}
-  m_Layer: 0
+  - component: {fileID: 114095628781020544}
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4388264258397094}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: upperArm.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4759611151797160}
   - component: {fileID: 95470021559353490}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: fps_arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4125514138469792}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rootBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4573415191759598}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: hand.r_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4519379229527068}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lowerArm.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4563725801234214}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: upperArm.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,9 +176,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4671550854291682}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Primary
-  m_TagString: Untagged
+  m_TagString: Primary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4242966393783076}
   - component: {fileID: 137238998656222182}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: fps_arms_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4943058866624472}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: hand.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4600166977382834}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WeaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4756317375853114}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: hand.l_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4754218304120864}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lowerArm.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +270,8 @@ GameObject:
   - component: {fileID: 20168797341842694}
   - component: {fileID: 81038098107189234}
   - component: {fileID: 114530569283458538}
-  m_Layer: 0
+  - component: {fileID: 114202151153110424}
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,9 +286,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4434625748834290}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Melee
-  m_TagString: Untagged
+  m_TagString: Melee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,7 +343,7 @@ Transform:
   m_GameObject: {fileID: 1898931784858066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children: []
   m_Father: {fileID: 4600166977382834}
   m_RootOrder: 2
@@ -437,8 +439,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1623902603267216}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.00023191392, y: 0.00040000258, z: 2.4130012e-10}
-  m_LocalScale: {x: 0.002, y: 0.002, z: 0.002}
+  m_LocalPosition: {x: 0.00029, y: 0.00391, z: 0.00127}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children: []
   m_Father: {fileID: 4600166977382834}
   m_RootOrder: 0
@@ -521,8 +523,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1087318159541332}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.00023191392, y: 0.00040000258, z: 2.4130012e-10}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: -0.00023191379, y: 0.0016500023, z: 0.0008333332}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children: []
   m_Father: {fileID: 4600166977382834}
   m_RootOrder: 1
@@ -622,6 +624,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114095628781020544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300398992648634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac3cbc73348b024b9ff70acc51fcacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114106671682056154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -633,6 +646,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b556e12b878a2409e374828b1dd0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114202151153110424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896842675028634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17238c425a161da45a281eefd1023186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  database: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!114 &114530569283458538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -658,6 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881fffa8cb71e6b4fa20093bbac6e005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSelected: 1
   primary: {fileID: 1623902603267216}
   secondary: {fileID: 1087318159541332}
   melee: {fileID: 1898931784858066}

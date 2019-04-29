@@ -34,14 +34,16 @@ public class PlayerMotor : MonoBehaviour {
 
 	void PerformMovement()
 	{
+		// Input keys
 		float moveX = Input.GetAxis("Horizontal");
 		float moveZ = Input.GetAxis("Vertical");
 
-
+		
 		if (controller.isGrounded)
 		{
 			moveDirection = new Vector3(moveX, 0, moveZ);
 			moveDirection = transform.TransformDirection(moveDirection);
+
 			if (Input.GetKey(KeyCode.LeftShift) && moveZ == 1)
 			{
 				moveSpeed = sprintSpeed;
@@ -68,6 +70,8 @@ public class PlayerMotor : MonoBehaviour {
 			}
 		}
 
+
+		// Applying gravity
 		moveDirection.y -= gravity;
 
 
