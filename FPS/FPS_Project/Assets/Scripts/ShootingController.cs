@@ -80,6 +80,8 @@ public class ShootingController : MonoBehaviour {
 			isReloading = true;
 
 			anim.SetTrigger("reloadTrigger");
+			GetCurrentWeaponAnimator().SetTrigger("reloadTrigger");
+			
 			yield return new WaitForSeconds(currentWeapon.reloadSpeed);
 
 			int magSize = currentWeapon.magSize;
@@ -110,6 +112,21 @@ public class ShootingController : MonoBehaviour {
 		}
 
 		return database.weapons[weaponID];
+	}
+
+	Animator GetCurrentWeaponAnimator()
+	{
+		switch (wp.weaponSelected)
+		{
+			case 1:
+				return wp.primary.GetComponentInChildren<Animator>();
+			case 2:
+				return wp.secondary.GetComponentInChildren<Animator>();
+			case 3:
+				return wp.melee.GetComponentInChildren<Animator>();
+			default:
+				return null;
+		}
 	}
 
 	void HandleInput()
