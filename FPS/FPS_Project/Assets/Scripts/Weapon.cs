@@ -12,6 +12,8 @@ public class Weapon {
 
 	public GameObject weaponObject;
 
+	public float mass;
+
 	public bool isGun = false;
 	public bool isAutomatic = false;
 	public int currentMag;

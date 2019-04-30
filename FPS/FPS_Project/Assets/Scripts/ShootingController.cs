@@ -58,7 +58,19 @@ public class ShootingController : MonoBehaviour {
 		else if (!currentWeapon.isGun && Time.time > nextTimeToShoot)
 		{
 			anim.SetTrigger("attackTrigger");
-			nextTimeToShoot = Time.time + (1 / currentWeapon.fireRate);
+			nextTimeToShoot = Time.time;
+
+			if (Physics.Raycast(ray, out hit, currentWeapon.range))
+			{
+
+				if (hit.transform.gameObject.GetComponent<CharacterStats>() != null)
+				{
+					hit.transform.gameObject.GetComponent<CharacterStats>().TakeDamage(currentWeapon.damage);
+				}
+			}
+			else
+			{
+			}
 		}
 	}
 	
@@ -106,8 +118,6 @@ public class ShootingController : MonoBehaviour {
 			weaponID = wp.melee.GetComponentInChildren<ItemID>().itemID;
 		if (weaponID < 0)
 		{
-			print("weaponID");
-			print("you aren't holding a weapon");
 			return null;
 		}
 
@@ -129,33 +139,50 @@ public class ShootingController : MonoBehaviour {
 		}
 	}
 
+	GameObject GetCurrentWeaponGO()
+	{
+		switch (wp.weaponSelected)
+		{
+			case 1:
+				return wp.primary.transform.GetChild(0).gameObject;
+			case 2:
+				return wp.secondary.transform.GetChild(0).gameObject;
+			case 3:
+				return wp.melee.transform.GetChild(0).gameObject;
+			default:
+				return null;
+		}
+	}
+
 	void HandleInput()
 	{
-		if(GetCurrentWeapon() != null)
+		if (Input.anyKey)
 		{
-			if (!GetCurrentWeapon().isAutomatic)
+			if (GetCurrentWeapon() != null)
 			{
-				if (Input.GetKeyDown(KeyCode.Mouse0))
+				if (!GetCurrentWeapon().isAutomatic)
 				{
-					Shoot();
+					if (Input.GetKeyDown(KeyCode.Mouse0))
+					{
+						Shoot();
+					}
+					else if (Input.GetKeyDown(KeyCode.R))
+					{
+						StartCoroutine(Reload());
+					}
 				}
-				else if (Input.GetKeyDown(KeyCode.R))
+				else if (GetCurrentWeapon().isAutomatic)
 				{
-					StartCoroutine(Reload());
-				}
-			}
-			if (GetCurrentWeapon().isAutomatic)
-			{
-				if (Input.GetKey(KeyCode.Mouse0))
-				{
-					Shoot();
-				}
-				else if (Input.GetKeyDown(KeyCode.R))
-				{
-					StartCoroutine(Reload());
+					if (Input.GetKey(KeyCode.Mouse0))
+					{
+						Shoot();
+					}
+					else if (Input.GetKeyDown(KeyCode.R))
+					{
+						StartCoroutine(Reload());
+					}
 				}
 			}
 		}
-
 	}
 }
