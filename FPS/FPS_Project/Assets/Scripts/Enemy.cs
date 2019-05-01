@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
 
 	NavMeshAgent agent;
 
-	GameObject target;
+	Transform target;
 
 	Animator anim;
 
@@ -23,13 +23,25 @@ public class Enemy : MonoBehaviour {
 	{
 		agent = GetComponent<NavMeshAgent>();
 		anim = GetComponent<Animator>();
-		target = GameObject.FindGameObjectWithTag("Player");
+		target = GetTarget();
 	}
 
 	void Update()
 	{
+		Work();
+	}
+
+	void Work()
+	{
+
+		target = GetTarget();
 		anim.SetFloat("velocity", agent.velocity.magnitude);
-		float dist = Vector3.Distance(transform.position, target.transform.position);
+
+		if (target == null) return;
+
+
+		float dist = Vector3.Distance(transform.position, target.position);
+
 		if (dist <= lookDistance)
 		{
 			if (dist < stoppingDistance)
@@ -44,9 +56,23 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+
+	Transform GetTarget()
+	{
+		Collider[] colliders = Physics.OverlapSphere(transform.position, lookDistance);
+		for (int i = 0; i < colliders.Length; i++)
+		{
+			if(colliders[i].GetComponent<WeaponScript>() != null)
+			{
+				return colliders[i].transform;
+			}
+		}
+		return null;
+	}
+
 	void FaceTarget()
 	{
-		Vector3 direction = (target.transform.position - transform.position).normalized;
+		Vector3 direction = (target.position - transform.position).normalized;
 		Quaternion lookRot = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
 		transform.rotation = Quaternion.Slerp(transform.rotation, lookRot , Time.deltaTime * rotSpeed);
 	}
@@ -54,7 +80,7 @@ public class Enemy : MonoBehaviour {
 	void GoToTarget()
 	{
 		agent.isStopped = false;
-		agent.SetDestination(target.transform.position);
+		agent.SetDestination(target.position);
 		anim.SetBool("attackRange", false);
 	}
 

@@ -30,6 +30,8 @@ public class PlayerPickup : MonoBehaviour {
 		inventory = gameController.GetComponent<PlayerInventory>();
 
 		pickupLayerMask = LayerMask.GetMask("Pickup");
+
+
 	}
 
 	void Update()
@@ -89,7 +91,7 @@ public class PlayerPickup : MonoBehaviour {
 					if (inventory.inventory[2] == id)
 					{
 						print("You already have that weapon");
-					}
+					} 
 					else
 					{
 						if(inventory.inventory[2] != 0)
@@ -142,11 +144,22 @@ public class PlayerPickup : MonoBehaviour {
 	{
 		if (GetCurrentWeapon() != null)
 		{
+			print("throwing weapon");
+
 			float throwForceAmp = 300f;
 			GetCurrentWeaponGO().AddComponent<Rigidbody>();
 			GetCurrentWeaponGO().GetComponent<Rigidbody>().AddForce(cam.transform.forward * throwForceAmp / GetCurrentWeapon().mass);
 			GetCurrentWeaponGO().transform.parent = null;
 			inventory.inventory[wp.weaponSelected - 1] = 0;
+
+			print("weapon thrown");
+
+			if (wp.ChangeWeapon(1)) ;
+			else if (wp.ChangeWeapon(2)) ;
+			else wp.ChangeWeapon(3);
 		}
 	}
+
+	
+
 }

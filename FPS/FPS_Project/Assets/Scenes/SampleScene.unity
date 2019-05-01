@@ -8887,6 +8887,11 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 114940299387291704, guid: 2188c2dac05c4d24b9bb8f0c6af8a5f7,
+        type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 794717730}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2188c2dac05c4d24b9bb8f0c6af8a5f7, type: 2}
   m_IsPrefabAsset: 0
@@ -11162,15 +11167,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4201915588539208, guid: f8d5ee8d785cb854f886409f508bbf1e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 12.707745
+      value: 12.798786
       objectReference: {fileID: 0}
     - target: {fileID: 4201915588539208, guid: f8d5ee8d785cb854f886409f508bbf1e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.017296
+      value: 6.204796
       objectReference: {fileID: 0}
     - target: {fileID: 4201915588539208, guid: f8d5ee8d785cb854f886409f508bbf1e, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.8604813
+      value: 2.207179
       objectReference: {fileID: 0}
     - target: {fileID: 4201915588539208, guid: f8d5ee8d785cb854f886409f508bbf1e, type: 2}
       propertyPath: m_LocalRotation.x

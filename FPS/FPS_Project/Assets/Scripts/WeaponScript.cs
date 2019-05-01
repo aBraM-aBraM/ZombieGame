@@ -7,6 +7,11 @@ public class WeaponScript : MonoBehaviour {
 	public int weaponSelected = 1;
 
 	[SerializeField]
+	GameObject gameController; 
+
+	PlayerInventory inventory;
+
+	[SerializeField]
 	public GameObject primary, secondary, melee;
 
 	public Animator anim;
@@ -14,32 +19,39 @@ public class WeaponScript : MonoBehaviour {
 	void Start()
 	{
 		anim = GetComponentInChildren<Animator>();
-		StartCoroutine(SwapWeapon(1,true));
+		StartCoroutine(SwapWeapon(3,true));
+		inventory = gameController.GetComponent<PlayerInventory>();
 	}
 
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
-			if (weaponSelected != 1)
-			{
-				StartCoroutine(SwapWeapon(1));
-			}
+			ChangeWeapon(1);
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha2))
 		{
-			if (weaponSelected != 2)
-			{
-				StartCoroutine(SwapWeapon(2));
-			}
+			ChangeWeapon(2);
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha3))
 		{
-			if (weaponSelected != 3)
-			{
-				StartCoroutine(SwapWeapon(3));
-			}
+			ChangeWeapon(3);
 		}
+	}
+
+	public bool ChangeWeapon(int index)
+	{
+		if(weaponSelected != index && inventory.inventory[index - 1] != 0)
+		{
+			StartCoroutine(SwapWeapon(index));
+			return true;
+		}
+		if (weaponSelected != index && index == 3)
+		{
+			StartCoroutine(SwapWeapon(index));
+			return true;
+		}
+		return false;
 	}
 
 	IEnumerator SwapWeapon(int weaponType,bool start = false)
