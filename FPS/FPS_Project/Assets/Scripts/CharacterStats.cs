@@ -21,7 +21,7 @@ public class CharacterStats : MonoBehaviour {
 	public virtual void Die()
 	{
 		isDead = true;
-		
+		Destroy(gameObject);
 	}
 
 	public void TakeDamage(float damage)

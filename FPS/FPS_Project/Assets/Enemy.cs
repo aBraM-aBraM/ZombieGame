@@ -11,8 +11,13 @@ public class Enemy : MonoBehaviour {
 
 	Animator anim;
 
+
+	[SerializeField]
+	private float lookDistance;
 	[SerializeField]
 	private float stoppingDistance;
+	[SerializeField]
+	private float rotSpeed;
 
 	void Start()
 	{
@@ -25,14 +30,25 @@ public class Enemy : MonoBehaviour {
 	{
 		anim.SetFloat("velocity", agent.velocity.magnitude);
 		float dist = Vector3.Distance(transform.position, target.transform.position);
-		if (dist < stoppingDistance)
+		if (dist <= lookDistance)
 		{
-			StopMoving();
+			if (dist < stoppingDistance)
+			{
+				StopMoving();
+				FaceTarget();
+			}
+			else
+			{
+				GoToTarget();
+			}
 		}
-		else
-		{
-			GoToTarget();
-		}
+	}
+
+	void FaceTarget()
+	{
+		Vector3 direction = (target.transform.position - transform.position).normalized;
+		Quaternion lookRot = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+		transform.rotation = Quaternion.Slerp(transform.rotation, lookRot , Time.deltaTime * rotSpeed);
 	}
 
 	void GoToTarget()
@@ -40,6 +56,12 @@ public class Enemy : MonoBehaviour {
 		agent.isStopped = false;
 		agent.SetDestination(target.transform.position);
 		anim.SetBool("attackRange", false);
+	}
+
+	void OnDrawGizmos()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position, lookDistance);
 	}
 
 	void StopMoving()
